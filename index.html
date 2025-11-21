@@ -1,170 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genius Brain - Abacus and Maths</title>
-  <style>
-    /* Basic reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Brain - Abacus and Maths</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #FFFDE7; /* very light pastel yellow */
+            color: #333;
+        }
 
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
+        /* Header */
+        header {
+            background-color: #F9A825; /* golden yellow */
+            color: white;
+            padding: 30px 20px 10px 20px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-size: 2em;
-    }
+        header h1 {
+            font-size: 2em;
+        }
 
-    header p {
-      font-size: 1.1em;
-      margin-top: 5px;
-    }
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
 
-    nav {
-      background-color: #333;
-    }
+        /* Sticky Contact Bar */
+        #contact-bar {
+            position: sticky;
+            top: 0;
+            background-color: #FFF9C4; /* soft yellow */
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-    }
+        .call-button {
+            display: inline-block;
+            background-color: #FFEB3B; /* bright yellow */
+            color: #333;
+            font-weight: bold;
+            padding: 14px 25px;
+            font-size: 1.1em;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
 
-    nav ul li {
-      margin: 5px 10px;
-    }
+        .call-button:hover {
+            background-color: #FBC02D; /* darker yellow on hover */
+            transform: scale(1.05);
+        }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      display: block;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
+        .call-button:active {
+            transform: scale(0.98);
+        }
 
-    nav ul li a:hover {
-      background-color: #4CAF50;
-      color: white;
-    }
+        /* Navigation */
+        nav {
+            background-color: #F57F17; /* mustard / dark yellow */
+        }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 20px auto;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
 
-    section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #4CAF50;
-      font-size: 1.8em;
-    }
+        nav ul li {
+            margin: 5px 10px;
+        }
 
-    section p, section ul {
-      font-size: 1em;
-      margin-bottom: 10px;
-    }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
 
-    section ul {
-      list-style: disc inside;
-      padding-left: 0;
-    }
+        nav ul li a:hover {
+            background-color: #F9A825; /* hover golden yellow */
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: white;
-    }
+        /* Sections */
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #FFFDE7; /* very light pastel yellow */
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
 
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-      }
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #F9A825; /* golden yellow titles */
+            font-size: 1.8em;
+        }
 
-      header p {
-        font-size: 1em;
-      }
+        section p, section ul {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
 
-      section {
-        padding: 30px 15px;
-      }
+        section ul {
+            list-style: disc inside;
+            padding-left: 0;
+        }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #F57F17; /* mustard dark yellow */
+            color: white;
+        }
 
-      nav ul li {
-        margin: 5px 0;
-      }
-    }
-  </style>
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .call-button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
-  <header>
+<header>
     <h1>Genius Brain</h1>
     <p>Abacus and Maths Coaching Center</p>
-  </header>
+</header>
 
-  <nav>
+<!-- Sticky Call Now Button -->
+<div id="contact-bar">
+    <a href="tel:+919840348850" class="call-button">📞 Call Now: +91 9840348850</a>
+</div>
+
+<nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Courses</a></li>
     </ul>
-  </nav>
+</nav>
 
-  <section id="home">
+<section id="home">
     <h2>Welcome to Genius Brain</h2>
     <p>At Genius Brain, we help children develop exceptional mathematical skills using Abacus and innovative teaching methods. Our goal is to make learning fun, interactive, and effective.</p>
-  </section>
+</section>
 
-  <section id="about">
+<section id="about">
     <h2>About Us</h2>
     <p>Unlock your child's full potential with Genius Brain, Chennai's premier education centre! For over 15 years, we've been experts in abacus training, nurturing young minds to excel. Our students shine, regularly participating in state and national level competitions. We also provide focused maths tuition for the State board syllabus, ensuring a strong academic foundation. Discover the Genius Brain difference and give your child the gift of enhanced learning!</p>
-  </section>
+</section>
 
-  <section id="courses">
+<section id="courses">
     <h2>Our Courses</h2>
     <ul>
-      <li>Abacus for Kids</li>
-      <li>Mathematics tution for state board</li>
+        <li>Abacus for Kids</li>
+        <li>Mathematics tuition for state board</li>
     </ul>
-  </section>
+</section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Phone: +91 9840348850</p>
-  </section>
-
-  <footer>
+<footer>
     <p>&copy; 2025 Genius Brain. All Rights Reserved.</p>
-  </footer>
+</footer>
 
 </body>
 </html>
